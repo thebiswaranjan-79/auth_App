@@ -1,0 +1,7 @@
+<h1><%= @patient.name %></h1>
+
+<p>Age: <%= @patient.age %></p>
+<p>Disease: <%= @patient.disease %></p>
+<p>Registered On: <%= @patient.registered_at.to_date %></p>
+
+<%= link_to "Back to Patients", patients_path %>

@@ -10,16 +10,20 @@
 
     <%= yield :head %>
 
-    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
-    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
-
+    <!-- Icons -->
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
 
-    <%# Includes all stylesheet files in app/assets/stylesheets %>
+    <!-- Stylesheets -->
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+
+   <%= javascript_include_tag "https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js", defer: true %>
+   <%= javascript_include_tag "https://cdn.jsdelivr.net/npm/chartkick@5.1.0/dist/chartkick.min.js", defer: true %>
+
+
+    <!-- Remove this if you're not using importmap or pinning -->
+    <%# <%= javascript_importmap_tags %> %>
   </head>
 
   <body>

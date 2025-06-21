@@ -1,0 +1,8 @@
+<h1>Doctor Dashboard</h1>
+
+<% if current_user.doctor? %>
+  <h2>Patients Registered per Day</h2>
+  <%= line_chart Patient.group_by_day(:registered_at).count %>
+<% else %>
+  <p>You are not authorized to view this page.</p>
+<% end %>
