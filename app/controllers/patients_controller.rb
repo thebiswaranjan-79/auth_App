@@ -15,13 +15,14 @@ class PatientsController < ApplicationController
   end
 
   def create
-    @patient = current_user.patients.new(patient_params.merge(registered_at: Time.current))
-    if @patient.save
-      redirect_to patients_path, notice: "Patient registered"
-    else
-      render :new
-    end
+  @patient = current_user.patients.new(patient_params.merge(registered_at: Time.current, status: "registered"))
+  if @patient.save
+    redirect_to patients_path, notice: "Patient registered"
+  else
+    render :new
   end
+end
+
 
   def edit
     @patient = Patient.find(params[:id])

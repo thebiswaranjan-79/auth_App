@@ -1,3 +1,5 @@
+
+
 <h1>All Patients</h1>
 
 <% if current_user.receptionist? %>
@@ -8,7 +10,7 @@
   <% @patients.each do |patient| %>
     <li>
       <%= link_to patient.name, patient_path(patient) %>
-      (<%= patient.age %> yrs) — <%= patient.disease %>
+      (<%= patient.age %> yrs — <%= patient.disease %>)
 
       <% if current_user.receptionist? %>
         | <%= link_to "Edit", edit_patient_path(patient) %>

@@ -18,7 +18,7 @@ gem "stimulus-rails"
 gem "jbuilder"
 gem 'bcrypt', '~> 3.1.7'
 
-gem 'chartkick'
+gem "chartkick"
 gem 'groupdate'
 
 
